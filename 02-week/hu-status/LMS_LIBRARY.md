@@ -13,7 +13,7 @@
 
 | Layer | Technology |
 |---|---|
-| Frontend | Vue.js |
+| Frontend | React |
 | Backend | Go |
 | Database | PostgreSQL |
 | Runtime environment | Docker (containerized services) |
