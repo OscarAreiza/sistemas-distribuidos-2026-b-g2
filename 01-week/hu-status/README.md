@@ -37,3 +37,9 @@
 
 ## 6. Evidence links
 - `01-week/hu-status/session-2.png` — Session 2 foundations summary
+- `01-week/hu-status/PROBLEM-AND-CONSISTENCY-MODEL.md` — Session 1: the real problem, the
+  backlog seed, and consistency/delivery semantics per core operation (added 2026-09-02,
+  closing a gap found when this material was reviewed after HU-01..HU-04 shipped as `v1.0.0`)
+- `01-week/hu-status/ADR-AND-DOCS-REPO-KICKOFF.md` — Session 2: the docs repo, and the
+  chosen-architecture-style ADR (added 2026-09-02, same reason — includes an honest note on
+  why that ADR is numbered `ADR-002` in this team's repo, not `ADR-001`)
