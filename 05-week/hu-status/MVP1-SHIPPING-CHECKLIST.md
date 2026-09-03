@@ -4,8 +4,9 @@
 > running system, and run the retrospective.
 >
 > **Status: in progress, not shipped yet.** The `v1.0.0` tag and the `main` promotion are being
-> done manually by the team once the scope question below is resolved — this document is the
-> honest checklist of where things stand, not a claim that MVP 1 has already shipped.
+> done manually by the team. **The scope question below is now resolved** (see `README.md` in
+> this same folder) — Circulation ships after the tag, not before — so what remains is executing
+> steps 3–5 below, not deciding them.
 
 ---
 
@@ -22,8 +23,9 @@ Per `library-docs/03-product/product-backlog.md`, Cut 1 (Must Have) is:
 | HU-07 | Return Registration & History Tracking | ❌ No — same as above |
 
 **Real gap:** Circulation is this system's Core Domain (`library-docs/02-domain/domain-map.md`)
-— the loan/return cycle is the actual point of a library system. Tagging `v1.0.0` today ships
-login + student management + book catalog, with no way to actually lend or return a book.
+— the loan/return cycle is the actual point of a library system. Tagging `v1.0.0` on the resolved
+scope ships login + student management + book catalog, with no way to actually lend or return a
+book yet — an accepted, deliberate trade-off (see Section 3), not an oversight.
 
 ## 2. Definition of Done — verification against the real repo state
 
@@ -43,17 +45,21 @@ today (not aspirational):
 | Service README updated | ✅ | Every service has an accurate `README.md` and a `library-docs/09-microservices/services/NN-*/README.md` entry |
 | ADR created for significant decisions | ✅ | `ADR-004-incremental-microservices-decomposition.md` |
 
-## 3. Before the `v1.0.0` tag (team decision needed)
+## 3. Before the `v1.0.0` tag
 
-1. **Decide the real MVP 1 scope**: ship now with login + students + catalog only (dropping
-   HU-06/07 from this cut), or hold the tag until Circulation is implemented and merged.
-2. Whichever is chosen, update `library-docs/03-product/product-backlog.md` and
-   `04-requirements/traceability-matrix.md` to reflect the actual shipped scope — not the
-   originally planned one, if it changes.
-3. Promote `dev -> QA -> main` per `00-governance/git-conventions.md`'s branch strategy.
+1. **Resolved:** MVP 1 ships with login + students + catalog (HU-01/02/03/04/05). Circulation
+   (HU-06/07/08) is **not** part of this cut — it's a fast-follow implemented and merged after
+   the `v1.0.0` tag, per the decision recorded in this folder's `README.md` (Section 3, "Blockers
+   and risks") and formalized architecturally in `library-docs/05-architecture/decisions/records/ADR-005-mongodb-for-circulation-service.md`
+   (Circulation's own database engine — MongoDB, decided as part of finally scoping its build).
+2. Update `library-docs/03-product/product-backlog.md` and
+   `04-requirements/traceability-matrix.md` to reflect this actual shipped scope (HU-01–05), not
+   the originally planned Cut 1 (which included HU-06/07).
+3. Promote `dev -> QA -> main` per `00-governance/git-conventions.md`'s branch strategy, once
+   HU-03/HU-05 (student/book editing) are merged alongside HU-01/02/04.
 4. Tag `main` as `v1.0.0`.
-5. Record the demo and hold the retrospective; log any carried-over technical debt in
-   `library-docs/15-project-control/technical-backlog.md`.
+5. Record the demo and hold the retrospective; log Circulation as the carried-over scope in
+   `library-docs/15-project-control/technical-backlog.md`, not as unplanned technical debt.
 
 ## 4. Retrospective input (to discuss live, not pre-decided here)
 
@@ -63,8 +69,9 @@ today (not aspirational):
 - **What to improve:** documentation (`library-docs`) drifted from the code for a while during
   the microservices extraction — worth agreeing on updating both in the same PR going forward,
   per `ADR-004`'s own risk table.
-- **What's blocking MVP 1:** Circulation (HU-06/07/08) — the team should discuss whether it was
-  under-prioritized relative to its status as the Core Domain.
+- **What's blocking MVP 1:** nothing anymore — Circulation (HU-06/07/08) was deliberately moved
+  out of the MVP 1 cut (Section 3) rather than blocking the tag; still worth discussing live
+  whether the Core Domain being the last thing built was the right call for future cuts.
 
 ## Correlations
 
