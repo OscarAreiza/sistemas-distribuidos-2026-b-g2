@@ -27,13 +27,13 @@
 
 ## 3. Blockers and risks
 - **MVP 1 scope is not fully merged yet.** The original Cut 1 (Must Have) backlog is HU-01, HU-02, HU-04, HU-06, HU-07 (`03-product/product-backlog.md`) — HU-06 (Loan Registration) and HU-07 (Return Registration) are the Circulation bounded context, which has **no implementation at all yet** (only an unused domain skeleton inside `backend`, see `ADR-004`). Tagging `v1.0.0` today would ship login + student management + book catalog, without the loan/return flow that is the system's Core Domain.
-- Because of the above, promoting `dev -> main` and tagging `v1.0.0` is being done manually (not by me in this automated pass) once the team decides whether to (a) implement Circulation first, or (b) ship a reduced MVP 1 and treat loans/returns as a fast-follow.
+- **Resolved this week:** the team decided on option (b) — Circulation (HU-06/07/08) will **not** block the `v1.0.0` tag. It ships as a fast-follow **after** MVP 1, once the login + student management + book catalog stories already merged/mergeable (HU-01, HU-02, HU-03, HU-04, HU-05) are on `dev`. Promoting `dev -> QA -> main` and tagging `v1.0.0` proceeds on that reduced scope; Circulation's implementation starts only after the tag.
 - No CI pipeline exists yet, so the DoD's "CI/CD green on the branch" and "deployed to staging" criteria (`00-governance/definition-of-done.md`) cannot be verified automatically — checked manually instead (see `MVP1-SHIPPING-CHECKLIST.md` in this folder).
 
 ## 4. Plan for next week
-- Decide, as a team, whether Circulation (HU-06/07/08) gets implemented before the MVP 1 tag or after.
-- Merge the remaining `feat/HU-XX` branches into `dev` following the same incremental, one-bounded-context-at-a-time pattern already used for Access and Membership (`ADR-004`).
-- Once the team commits to a final MVP 1 scope: promote `dev -> QA -> main`, tag `v1.0.0`, run the demo, and hold the retrospective.
+- Merge the remaining `feat/HU-XX` branches into `dev` (HU-03, HU-05) following the same incremental, one-bounded-context-at-a-time pattern already used for Access and Membership (`ADR-004`).
+- Promote `dev -> QA -> main`, tag `v1.0.0` on the resolved MVP 1 scope (HU-01/02/03/04/05), run the demo, and hold the retrospective.
+- Start Circulation (HU-06/07/08) only after the `v1.0.0` tag, per the decision recorded in Blockers and risks above.
 
 ## 5. Compliance self-check
 - [x] Conventional Commits - `type(scope): summary`
