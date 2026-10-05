@@ -1,2 +1,10 @@
 node_modules/
 package-lock.json
+
+# per-environment files carry secrets (never versioned — same rule lms-infra's
+# own .gitignore uses for these same filenames). No leading slash and no
+# leading "env/" — those anchor to the repo root, and these files live nested
+# under <week>/hu-status/env/ instead.
+**/env/dev.env
+**/env/qa.env
+**/env/main.env
