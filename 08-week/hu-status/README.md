@@ -83,6 +83,10 @@
   - `SPRINT-EXECUTION.md` - Session 1: backlog, WIP limit, PR discipline, daily sync, throughput
   - `MVP2-STORY-MAP-AND-SCOPE.md` - Session 2: story map, planning-poker draft, dependency
     sequencing, committed MVP 2 scope
+  - `ADR-010-liquibase-for-database-migrations.md` - local copy of the ADR (`library-docs`
+    original: `05-architecture/decisions/records/ADR-010-...md`) committed this same week,
+    deciding every `-db` repo's migration tool (Liquibase, not golang-migrate) ahead of the
+    MVP 2 repo-per-context split this sprint's planning covers
 - Open PRs: https://github.com/code-corhuila/lms-circulation-api/pull/2,
   https://github.com/code-corhuila/lms-circulation-db/pull/2
 - Merged PRs this period: https://github.com/code-corhuila/lms-access-api/pull/2,
