@@ -1,0 +1,44 @@
+# lms-infra-postgres — the project's single PostgreSQL instance
+# (rules/3-Anexo-J, "Base de Datos Única"): one instance, one volume, one
+# database, every domain in its own schema. A -db repo never defines its own
+# container or volume anymore (J.3.1) — it only ships the migration
+# executor that applies its schema to this shared instance.
+#
+# Composes each -db's deploy/compose.yml via the sibling-directory
+# convention (ADR-006-repo-per-context-decomposition.md) — add a new
+# `include:` line here when a new PostgreSQL-backed domain is extracted.
+include:
+  - path: ../lms-membership-db/deploy/compose.yml
+  - path: ../lms-catalog-db/deploy/compose.yml
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${PG_DATABASE}
+      POSTGRES_USER: ${PG_ADMIN_USER}
+      POSTGRES_PASSWORD: ${PG_ADMIN_PASSWORD}
+      MEMBERSHIP_APP_PASSWORD: ${MEMBERSHIP_APP_PASSWORD}
+      CATALOG_APP_PASSWORD: ${CATALOG_APP_PASSWORD}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      # Runs once, only when the volume is empty (J.5.2) — creates the
+      # pgcrypto extension and each domain's login user (J.7).
+      - ./postgres/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${PG_ADMIN_USER} -d ${PG_DATABASE}"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks: [platform]
+
+volumes:
+  postgres-data:
+
+networks:
+  # external: true — created once per machine with `docker network create
+  # platform` (J.7), shared with lms-infra-mongo and every -api so they can
+  # all reach each other and the database instances by service name.
+  platform:
+    name: platform
+    external: true
