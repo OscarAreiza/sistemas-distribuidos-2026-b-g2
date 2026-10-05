@@ -93,11 +93,14 @@
   - `CONFIG-HARDENING.md` - Session 1: real implementation evidence, live-verified
   - `SECURE-CONFIG-ROLLOUT-PLAN.md` - Session 2: secrets plan, feature-flag policy, canary +
     rollback plan, sliced hardening stories
+  - `qa-promotion-standard.md` - local copy of `library-docs/11-quality/qa-promotion-standard.md`
+    (`library-docs#29`), the QA/TDD testing standard built this period for the `qa` promotion
+    work this week's hardening evidence will be validated against next
+  - `ADR-006-repo-per-context-decomposition.md`, `ADR-007-gateway-auth-and-rate-limiting.md`,
+    `ADR-008-circulation-saga-scope.md`, `ADR-009-worker-scheduling-model.md` - local copies of
+    the latest ADRs (`library-docs/05-architecture/decisions/records/`), referenced below
 - Open PRs this week: https://github.com/code-corhuila/lms-access-api/pull/6,
   https://github.com/code-corhuila/lms-access-api/pull/7,
   https://github.com/code-corhuila/lms-catalog-api/pull/9
-- Latest ADRs referenced: `library-docs/05-architecture/decisions/records/ADR-006-repo-per-context-decomposition.md`,
-  `ADR-007-gateway-auth-and-rate-limiting.md`, `ADR-008-circulation-saga-scope.md`,
-  `ADR-009-worker-scheduling-model.md`
 - Governance referenced: `library-docs/00-governance/git-conventions.md`,
   `library-docs/00-governance/definition-of-done.md`
