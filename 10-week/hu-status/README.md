@@ -26,11 +26,11 @@ promotion work), noted honestly as "doing," not claimed as "done."
 ## 1. User stories worked this week
 | HU ID | Title | Status (todo/doing/done) | Evidence (PR or commit URL) |
 |---|---|---|---|
-| HU-PERSIST-01 | Give each service its own database (Anexo J: shared instance, one schema/database per domain, least-privilege login) | doing | `lms-circulation-db#4` MERGED; `lms-membership-db#5` and `lms-catalog-db#4` OPEN, unreviewed |
-| HU-PERSIST-02 | One saga with a compensation path (overdue-loan penalty, per `ADR-008`) | todo | `lms-workflow` repo exists, scope documented, **zero code written** |
-| HU-PERSIST-03 | Outbox for one critical event | todo — **architecture note, not just unstarted** | This project has no message broker (`AT-002`, reaffirmed by `ADR-009`) — a classic outbox (durably write, then publish to a bus) doesn't apply. `ADR-008`'s `workflow_db.saga_runs` table is this project's actual durability mechanism for the one critical event in scope (loan overdue → penalty): it durably records which step completed before/while making the direct HTTP calls, which is the same crash-safety guarantee an outbox exists to provide, without a broker to publish to. Building `saga_runs` *is* this story, not a separate one |
-| HU-PERSIST-04 | Idempotent consumers | doing | HTTP-layer idempotency already real and tested: `circulation-api`'s `IdempotencyStore` (loan registration), `catalog-api`'s (book registration) — both Mongo/Postgres-backed, both verified live this period. **Not the same thing as idempotent message consumers** (no broker, so no message consumers exist) — `ADR-008`'s `loan_id`-keyed idempotency check for the penalty saga is the piece still to build |
-| HU-MVP2-RELEASE | Promote to `main`, tag `v2.0.0`, verify checklist incl. failure/compensation path, demo with injected failure, retrospective | todo | Blocked behind HU-PERSIST-01..04 and the `qa` promotions still open across Circulation/Catalog/Membership (see week 9's carried-over PRs) |
+| HU-PERSIST-01 | Give each service its own database (Anexo J: shared instance, one schema/database per domain, least-privilege login) | doing | `lms-circulation-db#4` MERGED; `lms-membership-db#5` and `lms-catalog-db#4` OPEN, unreviewed — `PERSISTENCE-SAGA-OUTBOX.md` §1 |
+| HU-PERSIST-02 | One saga with a compensation path (overdue-loan penalty, per `ADR-008`) | todo | `lms-workflow` repo exists, scope documented, **zero code written** — plan in `PERSISTENCE-SAGA-OUTBOX.md` §2, §4 |
+| HU-PERSIST-03 | Outbox for one critical event | todo — **architecture note, not just unstarted** | No message broker in this project (`AT-002`/`ADR-009`) — `saga_runs` is this project's outbox-equivalent, detailed in `PERSISTENCE-SAGA-OUTBOX.md` §3 |
+| HU-PERSIST-04 | Idempotent consumers | doing | HTTP-layer idempotency already real (`circulation-api`, `catalog-api`); the saga's own `loan_id` key still to build — `PERSISTENCE-SAGA-OUTBOX.md` §5 |
+| HU-MVP2-RELEASE | Promote to `main`, tag `v2.0.0`, verify checklist incl. failure/compensation path, demo with injected failure, retrospective | todo | Full ordered checklist, currently all unchecked on purpose — `MVP2-RELEASE-CHECKLIST.md` |
 
 ## 2. My individual contribution
 - Confirmed the real state of "each service its own database" across all three affected repos
@@ -81,6 +81,12 @@ promotion work), noted honestly as "doing," not claimed as "done."
 - [x] No secrets; config via environment variables - carried forward from week 9, no regression
 
 ## 6. Evidence links
+- Local documents attached in this same folder (`10-week/hu-status/`):
+  - `PERSISTENCE-SAGA-OUTBOX.md` - Session 1: real status of Anexo J per repo, the saga's
+    compensation path and state schema restated as the concrete thing to build, and why "outbox"
+    maps to `saga_runs` here, not a broker
+  - `MVP2-RELEASE-CHECKLIST.md` - Session 2: the full ordered release checklist, all unchecked on
+    purpose, with why nothing can start before Session 1's items are real
 - `library-docs/05-architecture/decisions/records/ADR-008-circulation-saga-scope.md` - the saga's
   full scope, compensation path, idempotency key, and state schema
 - `library-docs/05-architecture/decisions/records/ADR-009-worker-scheduling-model.md` - why
