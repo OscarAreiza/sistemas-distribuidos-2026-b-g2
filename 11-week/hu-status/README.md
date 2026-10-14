@@ -39,3 +39,4 @@
   - `Congreso de Robotica e IA.docx` - supporting course document
   - `release.md` - all PRs across the 12 microservice repos (`v2.0.1` release), by author
     (Oscar Areiza, Luis Meneses, Hermes Pascuas), with each repo's first/current tag commit
+  - `lms-reportes.html` - local-environment dashboard/report snapshot
