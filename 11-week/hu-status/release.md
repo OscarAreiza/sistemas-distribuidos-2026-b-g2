@@ -7,20 +7,20 @@ _Generado: 2026-10-13_
 - **Primer tag (y único publicado hasta ahora) en los 12 repos: `v2.0.1`.** Release real de GitHub publicado el 2026-10-13 (antes solo existía el tag crudo) — ver tabla de enlaces abajo.
 - **Tag actual: sigue siendo `v2.0.1`** — todavía no se ha creado `v2.0.2`. 7 de los 12 repos (`lms-front`, `lms-catalog-api`, `lms-catalog-portal`, `lms-membership-portal`, `lms-circulation-api`, `lms-circulation-portal`, `lms-circulation-db`) ya tienen en `main` trabajo nuevo del 2026-10-13, sin etiquetar todavía. Los otros 5 (`lms-membership-api`, `lms-membership-db`, `lms-catalog-db`, `lms-infra-postgres`, `lms-infra-mongo`) no se tocaron en esta ronda — su `main` es exactamente el mismo commit que `v2.0.1`.
 
-| Repositorio | Commit del tag `v2.0.1` | Commit actual en `main` | ¿Coinciden? |
-|---|---|---|---|
-| lms-front | `b012ea2a59db` | `d510df0054de` | 🟡 no — hay commits nuevos sin etiquetar |
-| lms-catalog-api | `5a2ccbbc77b1` | `05df113d9fce` | 🟡 no — hay commits nuevos sin etiquetar |
-| lms-catalog-portal | `b3b578dde029` | `aff85793c5a8` | 🟡 no — hay commits nuevos sin etiquetar |
-| lms-catalog-db | `8b0582795a7f` | `8b0582795a7f` | ✅ sí — nada nuevo desde el tag |
-| lms-membership-api | `4181abdc67df` | `4181abdc67df` | ✅ sí — nada nuevo desde el tag |
-| lms-membership-portal | `f62ed7fd153e` | `285796619f66` | 🟡 no — hay commits nuevos sin etiquetar |
-| lms-membership-db | `33a74cd04fd0` | `33a74cd04fd0` | ✅ sí — nada nuevo desde el tag |
-| lms-circulation-api | `54bbaa192f2e` | `4b6d64e2c76b` | 🟡 no — hay commits nuevos sin etiquetar |
-| lms-circulation-portal | `1659c628ceb2` | `b806df158a75` | 🟡 no — hay commits nuevos sin etiquetar |
-| lms-circulation-db | `0e0c932bf6ea` | `d29da28424a0` | 🟡 no — hay commits nuevos sin etiquetar |
-| lms-infra-postgres | `15fe583064a6` | `15fe583064a6` | ✅ sí — nada nuevo desde el tag |
-| lms-infra-mongo | `f1a359ecfe31` | `f1a359ecfe31` | ✅ sí — nada nuevo desde el tag |
+| Repositorio | Commit del tag `v2.0.1` | Commit actual en `main` |
+|---|---|---|
+| lms-front | `b012ea2a59db` | `d510df0054de` |
+| lms-catalog-api | `5a2ccbbc77b1` | `05df113d9fce` |
+| lms-catalog-portal | `b3b578dde029` | `aff85793c5a8` |
+| lms-catalog-db | `8b0582795a7f` | `8b0582795a7f` |
+| lms-membership-api | `4181abdc67df` | `4181abdc67df` |
+| lms-membership-portal | `f62ed7fd153e` | `285796619f66` |
+| lms-membership-db | `33a74cd04fd0` | `33a74cd04fd0` |
+| lms-circulation-api | `54bbaa192f2e` | `4b6d64e2c76b` |
+| lms-circulation-portal | `1659c628ceb2` | `b806df158a75` |
+| lms-circulation-db | `0e0c932bf6ea` | `d29da28424a0` |
+| lms-infra-postgres | `15fe583064a6` | `15fe583064a6` |
+| lms-infra-mongo | `f1a359ecfe31` | `f1a359ecfe31` |
 
 _(Los dos commits mostrados arriba son los commits reales — no el SHA del objeto tag anotado, que es un identificador distinto y no comparable directamente contra un commit.)_
 
