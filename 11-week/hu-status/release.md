@@ -4,27 +4,27 @@ _Generado: 2026-10-13_
 
 ## Resumen de versiones
 
-- **Primer tag (y único publicado hasta ahora) en los 12 repos: `v2.0.1`.**
-- **Tag actual: sigue siendo `v2.0.1`** — todavía no se ha creado `v2.0.2`. Los 7 repos trabajados en esta ronda (ver tabla abajo) ya tienen en `main` los commits de la próxima versión, pendientes de etiquetar.
-- **Release real de GitHub publicado en `v2.0.1` en los 12 repos** (antes solo existía el tag; se creó el Release formal el 2026-10-13) — ver tabla de enlaces abajo.
+- **Primer tag (y único publicado hasta ahora) en los 12 repos: `v2.0.1`.** Release real de GitHub publicado el 2026-10-13 (antes solo existía el tag crudo) — ver tabla de enlaces abajo.
+- **Tag actual: sigue siendo `v2.0.1`** — todavía no se ha creado `v2.0.2`. 7 de los 12 repos (`lms-front`, `lms-catalog-api`, `lms-catalog-portal`, `lms-membership-portal`, `lms-circulation-api`, `lms-circulation-portal`, `lms-circulation-db`) ya tienen en `main` trabajo nuevo del 2026-10-13, sin etiquetar todavía. Los otros 5 (`lms-membership-api`, `lms-membership-db`, `lms-catalog-db`, `lms-infra-postgres`, `lms-infra-mongo`) no se tocaron en esta ronda — su `main` es exactamente el mismo commit que `v2.0.1`.
 
-| Repositorio | Tag `v2.0.1` apunta a | `main` apunta a (actual) | Commits en `main` después de `v2.0.1` |
+| Repositorio | Commit del tag `v2.0.1` | Commit actual en `main` | ¿Coinciden? |
 |---|---|---|---|
-| lms-front | `78b9899` | `d510df0` | 6 |
-| lms-catalog-api | `6210ae2` | `05df113` | 12 |
-| lms-catalog-portal | `813d6e5` | `aff8579` | 8 |
-| lms-catalog-db | `4fc6885` | `8b05827` | 0 |
-| lms-membership-api | `c24782d` | `4181abd` | 0 |
-| lms-membership-portal | `2dd5181` | `2857966` | 7 |
-| lms-membership-db | `da88bc0` | `33a74cd` | 0 |
-| lms-circulation-api | `2418b7f` | `4b6d64e` | 5 |
-| lms-circulation-portal | `62e81f7` | `b806df1` | 11 |
-| lms-circulation-db | `329efb8` | `d29da28` | 4 |
-| lms-infra-postgres | `f440dc1` | `15fe583` | 0 |
-| lms-infra-mongo | `5a40230` | `f1a359e` | 0 |
+| lms-front | `b012ea2a59db` | `d510df0054de` | 🟡 no — hay commits nuevos sin etiquetar |
+| lms-catalog-api | `5a2ccbbc77b1` | `05df113d9fce` | 🟡 no — hay commits nuevos sin etiquetar |
+| lms-catalog-portal | `b3b578dde029` | `aff85793c5a8` | 🟡 no — hay commits nuevos sin etiquetar |
+| lms-catalog-db | `8b0582795a7f` | `8b0582795a7f` | ✅ sí — nada nuevo desde el tag |
+| lms-membership-api | `4181abdc67df` | `4181abdc67df` | ✅ sí — nada nuevo desde el tag |
+| lms-membership-portal | `f62ed7fd153e` | `285796619f66` | 🟡 no — hay commits nuevos sin etiquetar |
+| lms-membership-db | `33a74cd04fd0` | `33a74cd04fd0` | ✅ sí — nada nuevo desde el tag |
+| lms-circulation-api | `54bbaa192f2e` | `4b6d64e2c76b` | 🟡 no — hay commits nuevos sin etiquetar |
+| lms-circulation-portal | `1659c628ceb2` | `b806df158a75` | 🟡 no — hay commits nuevos sin etiquetar |
+| lms-circulation-db | `0e0c932bf6ea` | `d29da28424a0` | 🟡 no — hay commits nuevos sin etiquetar |
+| lms-infra-postgres | `15fe583064a6` | `15fe583064a6` | ✅ sí — nada nuevo desde el tag |
+| lms-infra-mongo | `f1a359ecfe31` | `f1a359ecfe31` | ✅ sí — nada nuevo desde el tag |
+
+_(Los dos commits mostrados arriba son los commits reales — no el SHA del objeto tag anotado, que es un identificador distinto y no comparable directamente contra un commit.)_
 
 ---
-
 
 ## GitHub Release — enlaces reales (v2.0.1)
 
@@ -42,25 +42,6 @@ _Generado: 2026-10-13_
 | lms-circulation-db | https://github.com/code-corhuila/lms-circulation-db/releases/tag/v2.0.1 |
 | lms-infra-postgres | https://github.com/code-corhuila/lms-infra-postgres/releases/tag/v2.0.1 |
 | lms-infra-mongo | https://github.com/code-corhuila/lms-infra-mongo/releases/tag/v2.0.1 |
-
-## Commit exacto del tag `v2.0.1` por repositorio (SHA completo)
-
-| Repositorio | Commit del tag `v2.0.1` | Commit actual en `main` (local, hoy) |
-|---|---|---|
-| lms-front | `78b989937eb6d26275bce3afa8a56275388e8c57` | `d510df0054de41fafab0cea2455cd983826dc460` |
-| lms-catalog-api | `6210ae209035522065ddc26903bb48d40d8ca095` | `05df113d9fce9cc4689ce87ca7bb07d93c6d3132` |
-| lms-catalog-portal | `813d6e5e42aa3180948eacbbfe4d38f680811035` | `aff85793c5a8f8819c3ef9ba0531ed3e1eb0caab` |
-| lms-catalog-db | `4fc68856c6a028ab3b1b7b302e1fe4dde77abb21` | `8b0582795a7f433ea2557f76c56a9f812a5c3ca8` |
-| lms-membership-api | `c24782da8d6d617a2ed8ddac56d81ca91501c772` | `4181abdc67df502e8bdc82b577b474deaf6c586e` |
-| lms-membership-portal | `2dd51815d57212d9a1865c72414b43c4ea6a0016` | `285796619f662fff27690ea62c20e06fee98a8eb` |
-| lms-membership-db | `da88bc035bf6cfb82893b55b11d2ae5ffd9e6293` | `33a74cd04fd090113adb4973b9f1e712ab76c3f5` |
-| lms-circulation-api | `2418b7f6a69c2447cd9df2d4471ee93cd6854cce` | `4b6d64e2c76b01385835b7fa2ddc13eec3fcc0a0` |
-| lms-circulation-portal | `62e81f77a1f48a203ed59d9974b6294462912c2e` | `b806df158a75f9208e8533372271235aa1bbecd3` |
-| lms-circulation-db | `329efb8650a2dd09620c0dfef4736c6e2d4650ca` | `d29da28424a0e8692a1698ebf577bddfc58ae8f6` |
-| lms-infra-postgres | `f440dc19def3fc6bfcf349bbe4f971c8258078b7` | `15fe583064a6309bfb89a196eb33f1c8d0d6dbca` |
-| lms-infra-mongo | `5a4023040be1153c9fd4b4b6467b31ad8fe770a0` | `f1a359ecfe31a3e8ec8a88e22e1bd0aee184832d` |
-
-No se creó ningún tag nuevo — por instrucción explícita, todo queda tal como está hoy en local/`main`. El campo "Commit actual en `main`" es el estado real de hoy (2026-10-13); en 7 de los 12 repos ya va por delante del tag `v2.0.1` (ver la tabla de "Commits en `main` después de `v2.0.1`" más abajo), pendiente de una futura etiqueta `v2.0.2` si se decide crear.
 
 ---
 ## PRs por repositorio y por autor
