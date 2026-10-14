@@ -7,6 +7,15 @@
 Written day 1 of this week, as a plan — not a record of a release that happened. Every item below
 is `todo`, in the order it has to happen, because each one is a real prerequisite for the next.
 
+**Version-number note (added later, for coherence with what actually exists):** the brief above
+says "tag v2.0.0", written before realizing the project was already past that number — `v2.0.1`
+was tagged across all 12 microservice repos before this saga/workflow scope was written, and
+another promotion round (develop → qa → main on all of them) landed on `main` as of 2026-10-13,
+still untagged. So wherever this document says `release/2.0.0` / `v2.0.0` below, the real next
+version is `release/2.0.2` / `v2.0.2` — this saga/workflow release would be the one *after* that,
+not instead of it. The checklist's actual steps (cut from `main`, fill gradually, 1 approval from
+`ariel5253`, tag right after merge) are unchanged; only the version number was wrong.
+
 ---
 
 ## 1. Why nothing here can start yet
