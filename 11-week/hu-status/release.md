@@ -6,6 +6,7 @@ _Generado: 2026-10-13_
 
 - **Primer tag (y único publicado hasta ahora) en los 12 repos: `v2.0.1`.**
 - **Tag actual: sigue siendo `v2.0.1`** — todavía no se ha creado `v2.0.2`. Los 7 repos trabajados en esta ronda (ver tabla abajo) ya tienen en `main` los commits de la próxima versión, pendientes de etiquetar.
+- **Release real de GitHub publicado en `v2.0.1` en los 12 repos** (antes solo existía el tag; se creó el Release formal el 2026-10-13) — ver tabla de enlaces abajo.
 
 | Repositorio | Tag `v2.0.1` apunta a | `main` apunta a (actual) | Commits en `main` después de `v2.0.1` |
 |---|---|---|---|
@@ -23,6 +24,24 @@ _Generado: 2026-10-13_
 | lms-infra-mongo | `5a40230` | `f1a359e` | 0 |
 
 ---
+
+
+## GitHub Release — enlaces reales (v2.0.1)
+
+| Repositorio | Release |
+|---|---|
+| lms-front | https://github.com/code-corhuila/lms-front/releases/tag/v2.0.1 |
+| lms-catalog-api | https://github.com/code-corhuila/lms-catalog-api/releases/tag/v2.0.1 |
+| lms-catalog-portal | https://github.com/code-corhuila/lms-catalog-portal/releases/tag/v2.0.1 |
+| lms-catalog-db | https://github.com/code-corhuila/lms-catalog-db/releases/tag/v2.0.1 |
+| lms-membership-api | https://github.com/code-corhuila/lms-membership-api/releases/tag/v2.0.1 |
+| lms-membership-portal | https://github.com/code-corhuila/lms-membership-portal/releases/tag/v2.0.1 |
+| lms-membership-db | https://github.com/code-corhuila/lms-membership-db/releases/tag/v2.0.1 |
+| lms-circulation-api | https://github.com/code-corhuila/lms-circulation-api/releases/tag/v2.0.1 |
+| lms-circulation-portal | https://github.com/code-corhuila/lms-circulation-portal/releases/tag/v2.0.1 |
+| lms-circulation-db | https://github.com/code-corhuila/lms-circulation-db/releases/tag/v2.0.1 |
+| lms-infra-postgres | https://github.com/code-corhuila/lms-infra-postgres/releases/tag/v2.0.1 |
+| lms-infra-mongo | https://github.com/code-corhuila/lms-infra-mongo/releases/tag/v2.0.1 |
 
 ## Commit exacto del tag `v2.0.1` por repositorio (SHA completo)
 
