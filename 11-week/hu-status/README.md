@@ -34,4 +34,6 @@
 - [ ] No secrets; config via environment variables
 
 ## 6. Evidence links
--
+- Local documents attached in this same folder (`11-week/hu-status/`):
+  - `figma-lms-library.txt` - link to the project's Figma design file
+  - `Congreso de Robotica e IA.docx` - supporting course document
