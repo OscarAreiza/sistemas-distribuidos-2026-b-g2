@@ -20,7 +20,7 @@ bounded context, which I own (`lms-circulation-api`, `lms-circulation-db`,
 |---|---|---|
 | CP0 | `README.md` | done |
 | CP1 | `01-journey.md` | done |
-| CP2 | `02-log-contract.md` | todo |
+| CP2 | `02-log-contract.md` | done |
 | CP3 | `03-instrumentation/` | todo |
 | CP4 | `04-metrics.md` | todo |
 | CP6 | `05-slo.md` | todo |
