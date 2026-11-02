@@ -1,0 +1,21 @@
+groups:
+  - name: TODO
+    rules:
+      - alert: TODO
+        expr: TODO
+        for: TODO
+        labels:
+          severity: TODO
+          team: TODO
+        annotations:
+          summary: TODO
+          runbook_url: TODO
+      - alert: TODO
+        expr: TODO
+        for: TODO
+        labels:
+          severity: TODO
+          team: TODO
+        annotations:
+          summary: TODO
+          runbook_url: TODO
